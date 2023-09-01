@@ -10,11 +10,20 @@ import Home from "./routes/Home"
 import Produtos from "./routes/Produtos"
 
 const router = createBrowserRouter([
-  {path: '/', element: <App/>}
+  {path: '/', element: <App/>,
+    errorElement: <Erro404/>, 
+    children:[
+      {path: '/', element: <Home/>},
+      {path: '/produtos', element: <Produtos/>},
+      {path: '/editar/produtos/:id', element: <EditarProdutos/>},
+  ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+
+    <RouterProvider router={router}/> 
+
   </React.StrictMode>,
 )
