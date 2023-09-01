@@ -9,6 +9,10 @@ import Erro404 from "./routes/Erro404"
 import Home from "./routes/Home"
 import Produtos from "./routes/Produtos"
 
+const router = createBrowserRouter([
+  {path: '/', element: <App/>}
+]);
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
